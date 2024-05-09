@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "294451746941",
+    "project_id": "chatapponline-52699",
+    "storage_bucket": "chatapponline-52699.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:294451746941:android:c29624be7bbc9a3db67914",
+        "android_client_info": {
+          "package_name": "com.example.chatapponline"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAS3ZvFFyKVPQGT9pbHAW7DHW0_60kEofA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
