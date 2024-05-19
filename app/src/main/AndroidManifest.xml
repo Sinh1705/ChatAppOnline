@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,26 +15,33 @@
         android:theme="@style/Theme.ChatAppOnline"
         tools:targetApi="31">
         <activity
-            android:windowSoftInputMode="adjustNothing"
-            android:name=".activities.SignUpActivity" />
+            android:name=".activities.ChatActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
-            android:windowSoftInputMode="adjustNothing"
+            android:name=".activities.UsersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.SignUpActivity"
+            android:windowSoftInputMode="adjustNothing" />
+<!--        thay đổi kích thước cửa sổ chính để nhường chỗ cho bàn phím-->
+        <activity
             android:name=".activities.SignInActivity"
-            android:exported="true">
+            android:exported="true"
+            android:windowSoftInputMode="adjustNothing">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activities.MainActivity">
-        </activity>
+        <activity android:name=".activities.MainActivity" />
+
         <service
             android:name=".firebase.MessagingService"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
     </application>

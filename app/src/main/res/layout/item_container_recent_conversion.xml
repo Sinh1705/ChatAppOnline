@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_8sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:riv_oval="true"
+        android:scaleType="centerCrop"
+        android:background="@drawable/background_image"
+        android:id="@+id/imageProfile"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/viewSupporter"
+        app:layout_constraintStart_toEndOf="@id/imageProfile"
+        app:layout_constraintBottom_toBottomOf="@id/imageProfile"
+        app:layout_constraintTop_toTopOf="@id/imageProfile"
+        android:layout_width="1dp"
+        android:layout_height="1dp"/>
+    <TextView
+        android:id="@+id/textName"
+        android:textSize="@dimen/_13ssp"
+        android:textColor="@color/primary_text"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/viewSupporter"
+        app:layout_constraintStart_toEndOf="@id/imageProfile"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/textRecentMessage"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/secondary_text"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewSupporter"
+        app:layout_constraintStart_toEndOf="@id/imageProfile"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
