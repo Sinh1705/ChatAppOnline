@@ -10,16 +10,20 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.chatapponline.databinding.ItemContainerRecentConversionBinding;
+import com.example.chatapponline.listener.ConversionListener;
 import com.example.chatapponline.models.ChatMessage;
+import com.example.chatapponline.models.User;
 
 import java.util.List;
 
 public class RecentCoversationsAdapter extends RecyclerView.Adapter<RecentCoversationsAdapter.ConverionViewHolder> {
 
     private final List<ChatMessage> chatMessages;
+    private final ConversionListener conversionListener;
 
-    public RecentCoversationsAdapter(List<ChatMessage> chatMessages) {
+    public RecentCoversationsAdapter(List<ChatMessage> chatMessages, ConversionListener conversionListener) {
         this.chatMessages = chatMessages;
+        this.conversionListener = conversionListener;
     }
 
     @NonNull
@@ -39,6 +43,7 @@ public class RecentCoversationsAdapter extends RecyclerView.Adapter<RecentCovers
 
     @Override
     public int getItemCount() {
+
         return chatMessages.size();
     }
 
@@ -54,6 +59,13 @@ public class RecentCoversationsAdapter extends RecyclerView.Adapter<RecentCovers
             binding.imageProfile.setImageBitmap(getConversionImage(chatMessage.conversionImage));
             binding.textName.setText(chatMessage.conversionName);
             binding.textRecentMessage.setText(chatMessage.message);
+            binding.getRoot().setOnClickListener(v->{
+                User user = new User();
+                user.id = chatMessage.converionId;
+                user.name = chatMessage.conversionName;
+                user.image = chatMessage.conversionImage;
+                conversionListener.onConversionClicked(user);
+            });
         }
     }
     private Bitmap getConversionImage(String encodedImage){
